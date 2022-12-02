@@ -1,7 +1,6 @@
 "use strict";
 
-import 'dotenv/config';
-import express from 'express'
+import WEATHER_API_KEY from "../JS/app.js"
 
 let weatherApi =
 {
@@ -9,7 +8,7 @@ let weatherApi =
     fetchWeather: function (coord) {
         fetch("https://api.openweathermap.org/data/2.5/weather?q="
             + coord +
-            "&units=metric&appid=" + process.env.WEATHER_API_KEY)
+            "&units=metric&appid=" + WEATHER_API_KEY)
             .then((res) => res.json())
             .then((weatherdata) => this.displayWeather(weatherdata));
     },
@@ -21,7 +20,7 @@ let weatherApi =
         const { speed } = weatherdata.wind;
 
         $("#place").text("Weather in: " + name);
-        $("#temp").text(temp + " °C");
+        $("#temp").text(Math.floor(temp) + " °C");
         $("#humid").text(humidity);
         $("#cloud").text(description);
         $("#spped").text(speed + " km/h");
