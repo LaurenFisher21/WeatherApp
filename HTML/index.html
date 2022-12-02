@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/main.css">
+    <title>What's the Weather?</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="navi-left"><a href="../HTML/idk.html">Contact</a></li>
+                <li class="navi-left"><a href="../HTML/index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <div class="search-bar">
+            <input class="search-input" type="text" placeholder="Enter a place">
+            <button class="searchy">Search</button>
+        </div>
+    </section>
+
+    <section>
+        <div class="weather-readings loading">
+            <h2 id="place">Weather in: </h2>
+            <div>
+                <p class="annoying">Temperature: </p><label id="temp"></label><br><br>
+                <p class="annoying">Humidity: </p><label id="humid"></label><br><br>
+                <p class="annoying">Clouds: </p><label id="cloud"></label><br><br>
+                <p class="annoying">Wind: </p><label id="spped"></label><br><br>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="module" src="../JS/api-script.js"></script>
+</body>
+</html>
